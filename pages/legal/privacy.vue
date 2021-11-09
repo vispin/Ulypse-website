@@ -1,2 +1,7 @@
-njipbijfwaijnhfwnko;fwakonkonfwakonwfakojnwfaiokjn[fawoikiok[njionj[wafoikn[awfniotekonjhbiuofbiguhowabiojwfdhbijpwfhiopfwahiuhiupwfhiupwafhioupwafjiowjafoiiojpwafijo[wafoijwafjoinjokipfwjoik;wfajop[fwajopkop]afkp]fwakop[fawkop[fwakopkop[fa[opkjsfaopk[fsajkofsakopjop[fspoj[gsajopi[gasjpo[gasjopiop]gdsip]ogdsskiopgdsop]p[o\]gs[\o]gds[op]\gds[op\gsdp[\p[o\gsdl[p]sdgop=sdg;[=psdg=o[\gdso[=\pgeo[=pop[]gkkp[]segkop[]gsedlkp[]l[;g\ss[]l\ges]\ge]\pg[\pol\gse=\o[l-gesol-ges-=o0-lgse0-ges0-okgei0k-0-kesg0k-ges0i-kgseik-0pfgesikkp-00-ki=gsek-0pegsk-pgesk-gesk-]pgesk-pk]p[gelkp[]gd[kp\vgd[pkk[\gpdlo[p\][]pkgsd=p[lgds[plgsdk[pl[pgds[p\khfdskp[hrsk[p]hespkokjpsgdk[p
-gdsa]]]]]]]]]]]]]]]]]]]]]]]]]]]
+<template>
+    <div class="main">
+        <div class="container">
+            <h1>Privacy Policy<h1>
+            <p>
+                Although we are a group (That are still teenagers, whoops), we still want
+                what is safe as well as 
