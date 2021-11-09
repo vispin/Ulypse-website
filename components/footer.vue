@@ -2,7 +2,7 @@
   <footer :class="{ centered, padded, hideBig, hideSmall }">
     <span>
       Ulypse is open source software. You may view the source code at
-      <a target="_blank" href="https://github.com/euphorxa">our GitHub page</a>.
+      <a target="_blank" href="https://github.com/Ulypse/Ulypse-website">our GitHub page</a>.
     </span>
     <ul>
       <li>
