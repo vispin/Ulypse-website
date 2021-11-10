@@ -1,49 +1,127 @@
+
+  
 export default {
-  // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
-
-  router: {
-      base: '/'
-  },
-
-  // Global page headers (https://go.nuxtjs.dev/config-head)
+  /*
+   ** Nuxt target
+   ** See https://nuxtjs.org/api/configuration-target
+   */
+  target: 'server',
+  /*
+   ** Headers of the page
+   ** See https://nuxtjs.org/api/configuration-head
+   */
   head: {
-      title: 'Ulypse',
-      meta: [
-          {charset: 'utf-8'},
-          {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-          {hid: 'description', name: 'description', content: ''},
-          {name: 'google-site-verification', content: 'J4baRjNuvmn3FUcs7DNFIVxdH8jD_aO07O4HXa54dXU'}
-      ],
-      link: [
-          {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-          {rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css'}
-      ]
+    htmlAttrs: {
+      lang: 'en',
+    },
+    title: 'Ulypse',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Ulypse is a network aimed for simplicity in terms of usage and power',
+      },
+
+      { hid: 'publisher', name: 'publisher', content: 'Ulypse LLC' },
+      {
+        hid: 'apple-mobile-web-app-title',
+        name: 'apple-mobile-web-app-title',
+        content: 'Modrinth',
+      },
+      { hid: 'theme-color', name: 'theme-color', content: '#4d9227' },
+      { hid: 'color-scheme', name: 'color-scheme', content: 'light dark' },
+
+      { hid: 'og:site_name', name: 'og:site_name', content: 'Ulypse' },
+      {
+        hid: 'og:description',
+        name: 'og:description',
+        content: 'An open source driven platform',
+      },
+      {
+        hid: 'og:title',
+        name: 'og:title',
+        content: 'ulypse',
+      },
+      { hid: 'og:type', name: 'og:type', content: 'website' },
+      { hid: 'og:url', name: 'og:url', content: 'https://ulypse.net' },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'null',
+      },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@modrinth' },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap',
+      },
+    ],
+    script: [],
   },
 
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-      "@/assets/scss/main.scss"
-  ],
+  vue: {
+    config: {
+      productionTip: false,
+      devtools: true,
+    },
+  },
+  router: {
+    middleware: ['auth', 'analytics'],
+  },
+  /*
+   ** Global CSS
+   */
+  css: ['~assets/styles/global.scss'],
+  /*
+   ** Plugins to load before mounting the App
+   ** https://nuxtjs.org/guide/plugins
+   */
 
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [],
-
-  // Auto import components (https://go.nuxtjs.dev/config-components)
+  /*
+   ** Auto import components
+   ** See https://nuxtjs.org/api/configuration-components
+   */
   components: true,
+  /*
+   ** Nuxt.js dev-modules
+   */
 
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [],
+  /*
+   ** Nuxt.js modules
+   */
 
-  // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: [
-      // https://go.nuxtjs.dev/buefy
-      'nuxt-buefy',
-  ],
-
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {}
+  /*
+   ** Build configuration
+   ** See https://nuxtjs.org/api/configuration-build/
+   */
+  build: {
+    transpile: ['vue-tooltip', 'vue-notification'],
+    html: {
+      minify: {
+        collapseWhitespace: true, 
+        removeComments: true, 
+      },
+    },
+    babel: {
+      plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
+    },
+  },
+  styleResources: {
+    scss: './assets/styles/injected.scss',
+  },
+  loading: {
+    color: 'purple',
+    height: '2px',
+  },
 }
+
 
 function getDomain() {
   if (process.env.NODE_ENV === 'production') {
