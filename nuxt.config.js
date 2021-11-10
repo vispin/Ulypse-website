@@ -44,3 +44,19 @@ export default {
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
 }
+
+function getDomain() {
+  if (process.env.NODE_ENV === 'production') {
+    if (process.env.HOST_URL) {
+      return process.env.HOST_URL
+    } else if (process.env.HEROKU_APP_NAME) {
+      return `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
+    } else if (process.env.VERCEL_URL) {
+      return `https://${process.env.VERCEL_URL}`
+    } else {
+      return 'https://ulypse.net'
+    }
+  } else {
+    return 'http://localhost:3000'
+  }
+}
